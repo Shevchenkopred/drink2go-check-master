@@ -9,9 +9,68 @@
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
-    <header class="header">Шапка</header>
+    <header class="main-header">
+      <div class="main-header__container container">
+        <a class="main-header__logo" href="index.html">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="images/logo-desktop.svg" type="image/svg+xml" width="170" height="36">
+            <source media="(min-width: 768px)" srcset="images/logo-tablet.svg" type="image/svg+xml" width="82" height="36">
+            <img src="images/logo-mobile.svg" width="32" height="36" alt="Логотип интернет-магазина Drink2Go. Цифра два на фиолетовом фоне.">
+          </picture>
+        </a>
+        <ul class="main-header__list">
+          <li class="main-header__item">
+            <a class="main-header__link" href="#">
+              <span class="visually-hidden">Зайти в профиль.</span>
+              <svg width="16" height="16">
+                <use href="icons/stack.svg#header-user"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="main-header__item">
+            <a class="main-header__link" href="#">
+              <span class="visually-hidden">Перейти в корзину.</span>
+              <svg width="16" height="16">
+                <use href="icons/stack.svg#header-basket"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="main-header__item">
+            <button class="main-header__burger-menu burger-menu">
+              <span class="visually-hidden">Открыть список навигации.</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
     <main>
-      <h1>Страница для старта</h1>
+      <section class="hero">
+        <div class="slider">
+          <div class="slider__wrapper">
+            <div class="slider__items">
+              <div class="slider__item">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="images/slider-product-desktop@1x.webp 1x, images/slider-product-desktop@2x.webp 2x" type="image/webp" width="600" height="600">
+                  <source media="(min-width: 768px)" srcset="images/slider-product-tablet@1x.webp 1x, images/slider-product-tablet@2x.webp 2x" type="image/webp" width="476" height="476">
+                  <source srcset="images/slider-product-mobile@1x.webp 1x, images/slider-product-mobile@2x.webp 2x" type="image/webp" width="280" height="280">
+                  <source media="(min-width: 1440px)" srcset="images/slider-product-desktop@1x.png 1x, images/slider-product-desktop@2x.png 2x" type="image/png" width="600" height="600">
+                  <source media="(min-width: 768px)" srcset="images/slider-product-tablet@1x.png 1x, images/slider-product-tablet@2x.png 2x" type="image/png" width="476" height="476">
+                  <img src="images/slier-product-mobile@1x.png 1x" srcset="images/slider-product-mobile@2x.png 2x" width="280" height="280" alt="Банка кофе с всплесками воды на заднем фоне.">
+                </picture>
+                <div class="hero__wrapper">
+                  <span class="hero__subtitle">Новинка!</span>
+                  <h2 class="hero__title">Декаф Флэт Уайт</h2>
+                  <p class="hero__description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
+                  <div class="hero__wrapper-price">
+                    <span class="hero__price"><del>295₽</del> 225₽</span>
+                    <button class="hero__order">Заказать</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

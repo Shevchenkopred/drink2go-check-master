@@ -1,0 +1,33 @@
+@mixin font-face ($font-family, $font-src, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: $font-src;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+  }
+}
+
+@mixin title-typography ($font-size: 42px, $font-weight: 700, $line-height: 1.52) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin text-typography ($font-size: 14px, $font-weight: 400, $line-height: 1.42) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}

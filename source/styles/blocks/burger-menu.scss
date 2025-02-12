@@ -1,0 +1,27 @@
+.burger-menu {
+  @include button-reset;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $base-black;
+  }
+
+  &::before {
+    top: 2px;
+    box-shadow: 0 5px $base-black;
+  }
+
+  &::after {
+    bottom: 2px;
+  }
+}
