@@ -1,0 +1,25 @@
+.button {
+  @include button-reset;
+  @include text-typography ($font-size: 16px, $line-height: 1.5);
+  padding: 8px 20px;
+  color: $base-white;
+  background-color: $base-primary;
+  border-radius: 4px;
+  font-family: $basic-font;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-lighter;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+    cursor: default;
+  }
+}

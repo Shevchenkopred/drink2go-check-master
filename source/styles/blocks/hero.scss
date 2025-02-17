@@ -1,0 +1,114 @@
+.hero {
+  text-align: center;
+
+  @media (min-width: $desktope-width) {
+    text-align: left;
+  }
+}
+
+.hero__image {
+  width: 280px;
+  height: 280px;
+  margin-bottom: 8px;
+
+  @media (min-width: $tablet-width) {
+    width: 476px;
+    height: 476px;
+  }
+
+  @media (min-width: $desktope-width) {
+    width: 600px;
+    height: 600px;
+    margin: 0;
+  }
+}
+
+.hero__subtitle {
+  @include text-typography ($font-size: 12px, $font-weight: 700, $line-height: 1.3);
+  display: inline-block;
+  margin-bottom: 5px;
+  font-family: $basic-font-bold;
+  letter-spacing: 0.04em;
+  color: $base-primary;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  @include title-typography ($font-size: 36px, $font-weight: 700, $line-height: 1.3);
+  width: 280px;
+  font-family: $basic-font-bold;
+  margin: 0 auto 13px;
+  letter-spacing: 0.02em;
+
+  @media (min-width: $tablet-width) {
+    @include title-typography ($font-size: 56px, $line-height: 1.42);
+    width: 608px;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: $desktope-width) {
+    margin-inline: 0;
+  }
+}
+
+.hero__description {
+  width: 280px;
+  margin: 0 auto 19px;
+
+  @media (min-width: $tablet-width) {
+    @include text-typography ($font-size: 20px, $line-height: 1.6);
+    width: 608px;
+    margin-bottom: 20px;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: $desktope-width) {
+    width: 606px;
+    padding-inline: 0;
+    margin: 0 0 40px;
+  }
+}
+
+.hero__wrapper-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 230px;
+  margin: 0 auto;
+  gap: 5px 22px;
+
+  @media (min-width: $desktope-width) {
+    justify-content: start;
+    width: 248px;
+    margin: 0;
+  }
+}
+
+.hero__price {
+  @include text-typography ($font-size: 20px, $font-weight: 600, $line-height: 1.6);
+  display: flex;
+  column-gap: 6px;
+}
+
+.hero__price-before {
+  @include text-typography ($font-size: 16px, $line-height: 2);
+  color: $base-primary;
+}
+
+.hero__order {
+  width: 113px;
+}
+
+.hero__wrapper {
+  @media (min-width: $tablet-width) {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktope-width) {
+    order: 0;
+    width: 625px;
+    margin: 148px 0 0;
+  }
+}

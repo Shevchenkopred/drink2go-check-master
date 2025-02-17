@@ -1,6 +1,11 @@
 /* здесь используйте глобальные переменные */
 /* Fonts */
 $basic-font: "Montserrat", "Arial", sans-serif;
+$basic-font-bold: "Montserrat-bold", "Arial", sans-serif;
+
+/* width screen */
+$tablet-width: 768px;
+$desktope-width: 1440px;
 
 /* Base colors */
 $base-white: #ffffff;
@@ -10,7 +15,7 @@ $base-primary: #7859cf;
 $base-secondary: #f0ebff;
 
 /* Alt colors */
-$primary-opacity: rgba(120,89,207,0.25);
+$primary-opacity: rgba(120, 89, 207, 0.25);
 $primary-lighter: #9070ec;
 $primary-darker: #593cac;
 $light-grey: #e2e2e2;

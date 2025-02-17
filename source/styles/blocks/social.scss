@@ -1,0 +1,23 @@
+.social {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 19px;
+}
+
+.social__link {
+  display: flex;
+  padding: 10px;
+  color: $base-grey;
+  transition: color 0.2s, background-color 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: $base-secondary;
+    color: $base-primary;
+  }
+
+  &:active {
+    background-color: $primary-opacity;
+  }
+}

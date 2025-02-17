@@ -1,0 +1,160 @@
+.range-slider {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.range-slider__title {
+  @include text-typography ($font-size: 16px, $font-weight: 600, $line-height: 1.5);
+  padding: 0;
+  margin-bottom: 31px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.range-slider__slider-wrapper-input {
+  display: flex;
+  align-items: center;
+  column-gap: 18px;
+
+  @media (min-width: $tablet-width) {
+    column-gap: 20px;
+  }
+}
+
+.range-slider__input {
+  width: 118px;
+  height: 40px;
+  padding: 8px 10px;
+  font-family: $basic-font;
+  background-color: $base-white;
+  color: $base-black;
+  border: 2px solid $primary-lighter;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  appearance: textfield;
+  cursor: pointer;
+
+  &--from::placeholder {
+    color: $base-grey;
+  }
+
+  &--to::placeholder {
+    color: $base-black;
+  }
+
+  &:focus {
+    border-color: $primary-darker;
+  }
+
+  &:disabled {
+    border-color: $light-grey;
+    background-color: $lightest-grey;
+    color: $base-grey;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 87px;
+  }
+
+  @media (min-width: $desktope-width) {
+    width: 134px;
+  }
+}
+
+.range-slider__separator {
+  display: inline-block;
+  width: 8px;
+  height: 2px;
+  background-color: $base-grey;
+
+  @media (min-width: $desktope-width) {
+    width: 10px;
+  }
+}
+
+
+/* CASTOM SETTING RANGE-SLIDER */
+.castom-range-slider {
+  width: 273px;
+  margin: 0 0 34px 7px;
+
+  @media (min-width: $tablet-width) {
+    width: 216px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktope-width) {
+    width: 311px;
+    margin-bottom: 32px;
+  }
+}
+
+.noui-target {
+  background-color: transparent;
+  border-radius: inherit;
+  border: none;
+  box-shadow: none;
+  height: 4px;
+}
+
+.noui-horizontal .noui-handle {
+  top: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+
+.noui-handle {
+  background-color: $base-white;
+  border: 2px solid $primary-lighter;
+  box-shadow: none;
+}
+
+.noui-handle::before,
+.noui-handle::after {
+  display: none;
+}
+
+.noui-connect {
+  height: 4px;
+  background-color: $primary-lighter;
+}
+
+.noui-connects {
+  height: 2px;
+  overflow: visible;
+  border-radius: inherit;
+  background-color: $light-grey;
+}
+
+.noui-touch-area {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-opacity;
+  }
+
+  &:active {
+    background-color: $base-primary;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+  }
+}
+

@@ -1,27 +1,46 @@
 .burger-menu {
   @include button-reset;
   position: relative;
-  width: 16px;
-  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
   background-color: transparent;
+  cursor: pointer;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    left: -2px;
-    display: block;
-    width: 100%;
+    display: inline-flex;
+    width: 16px;
     height: 2px;
     background-color: $base-black;
   }
 
   &::before {
-    top: 2px;
-    box-shadow: 0 5px $base-black;
+    bottom: 24px;
+    box-shadow: 0 -5px $base-black;
   }
 
   &::after {
-    bottom: 2px;
+    top: 24px;
+  }
+
+  &--opened {
+    &::after {
+      transform: translateY(5px) rotate(-45deg);
+    }
+
+    &::before {
+      box-shadow: none;
+      transform: translateY(-5px) rotate(45deg);
+    }
+  }
+
+  &:active {
+    background-color: $base-secondary;
   }
 }

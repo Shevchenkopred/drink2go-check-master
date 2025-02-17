@@ -2,24 +2,126 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 320px;
+  margin: 0 auto;
+  padding-left: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+    justify-content: start;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: $desktope-width) {
+    width: 1440px;
+    padding-inline: 40px;
+  }
+}
+
+.main-header__wrapper-logo {
+  flex-shrink: 0;
+  height: 36px;
+
+  @media (min-width: $desktope-width) {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+}
+
+.main-header__logo {
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.main-header__logo-slogan {
+  display: none;
+
+  @media (min-width: $desktope-width) {
+    @include text-typography ($font-size: 12px, $font-weight: 400, $line-height: 1.3);
+    display: block;
+    width: 126px;
+  }
 }
 
 .main-header__list {
   @include list-reset;
   display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet-width) {
+    order: 1;
+    margin-left: 51px;
+  }
+
+  @media (min-width: $desktope-width) {
+    margin-left: auto;
+    column-gap: 16px;
+  }
 }
 
 .main-header__item {
   display: flex;
   align-items: center;
+}
 
-  &:has(button) {
-    justify-content: flex-end;
-    width: 41px;
+.main-header__item--burger-menu {
+  @media (min-width: $tablet-width) {
+    display: none;
   }
 }
 
 .main-header__link {
   display: flex;
   padding: 22px;
+  color: $base-black;
+  transition: color 0.2s, background-color 0.2s;
+
+  &:active {
+    background-color: $base-secondary;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 32px 22px;
+  }
+
+  @media (min-width: $desktope-width) {
+    column-gap: 8px;
+
+    &:hover > .main-header__link-text,
+    &:focus > .main-header__link-text,
+    &:hover,
+    &:focus {
+      color: $base-primary;
+    }
+
+    &:active {
+      background-color: $base-secondary;
+      color: $base-primary;
+    }
+  }
+}
+
+.main-header__link-text {
+  display: none;
+
+  @media (min-width: $desktope-width) {
+    @include text-typography ($font-size: 12px, $font-weight: 500, $line-height: 1.3);
+    color: $base-black;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    display: block;
+  }
+}
+
+.main-header__link-span {
+  @media (min-width: $desktope-width) {
+    display: none;
+  }
 }

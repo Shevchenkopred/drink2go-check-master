@@ -1,0 +1,203 @@
+.catalog {
+  padding: 50px 0 44px;
+  background-color: $lightest-grey;
+
+  @media (min-width: $tablet-width) {
+    padding: 81px 0 90px;
+  }
+
+  @media (min-width: $desktope-width) {
+    padding: 100px 0 119px;
+  }
+}
+
+.catalog__container {
+  width: 320px;
+  margin: 0 auto;
+  padding-inline: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 728px;
+    padding-inline: 0;
+  }
+
+  @media (min-width: $desktope-width) {
+    display: grid;
+    grid-template: repeat(5, auto) / 318px 521px 519px;
+    grid-template-areas:
+      "subtitle   subtitle   subtitle"
+      "title      title      title"
+      "form       select     select"
+      "form       catalog    catalog"
+      "pagination pagination pagination";
+    width: 1440px;
+    padding-inline: 40px;
+  }
+}
+
+.catalog__subtitle {
+  @include text-typography ($font-size: 12px, $font-weight: 700, $line-height: 1.3);
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $base-primary;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: $desktope-width) {
+    grid-area: subtitle;
+  }
+}
+
+.catalog__title {
+  @include title-typography ($font-size: 24px, $font-weight: 700, $line-height: 1.5);
+  font-family: $basic-font-bold;
+  margin: 0 0 20px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    @include title-typography ($font-size: 42px, $font-weight: 700, $line-height: 1.5);
+  }
+
+  @media (min-width: $desktope-width) {
+    grid-area: title;
+  }
+}
+
+.catalog__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  margin-bottom: 41px;
+
+  @media (min-width: $tablet-width) {
+    flex-flow: row wrap;
+    gap: 40px 30px;
+  }
+
+  @media (min-width: $desktope-width) {
+    grid-area: form;
+    flex-direction: column;
+    margin: 20px 0 0;
+  }
+
+  @media (min-width: $desktope-width) {
+    gap: 30px 10px;
+  }
+}
+
+.catalog__form-filter {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog__form-wrapper-button {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 20px;
+    width: 100%;
+  }
+
+  @media (min-width: $desktope-width) {
+    width: 318px;
+    margin-top: 10px;
+  }
+}
+
+.catalog__form-submit,
+.catalog__form-reset {
+  @media (min-width: $desktope-width) {
+    width: 148px;
+  }
+}
+
+.catalog__select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 17px;
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: flex-end;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: $desktope-width) {
+    grid-area: select;
+    justify-self: end;
+    width: 282px;
+    margin: 17px 0 0;
+  }
+}
+
+.catalog__select-text {
+  @include text-typography ($font-size: 16px, $font-weight: 600, $line-height: 1.5);
+  order: -1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    translate: 0 -50%;
+    width: 10px;
+    height: 6px;
+    background-image: url("../../icons/stack.svg#selected-arrow");
+    transition: 0.5s ease-out;
+  }
+}
+
+.catalog__select {
+  @include text-typography ($font-size: 16px, $font-weight: 600, $line-height: 1.5);
+  width: 165px;
+  padding: 4px 10px;
+  font-family: $basic-font;
+  color: $base-primary;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $base-secondary;
+    border-radius: 4px;
+  }
+
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+.catalog__select:focus + .catalog__select-text::before {
+  rotate: 180deg;
+}
+
+.catalog__list {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 71px;
+  }
+
+  @media (min-width: $desktope-width) {
+    grid-area: catalog;
+    justify-self: end;
+    margin: 25px 0 62px;
+  }
+}
+
+.catalog__pagination-list {
+  @media (min-width: $desktope-width) {
+    grid-area: pagination;
+  }
+}

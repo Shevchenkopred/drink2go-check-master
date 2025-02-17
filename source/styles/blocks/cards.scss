@@ -1,0 +1,15 @@
+.cards {
+  @include list-reset;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    gap: 30px;
+    flex-flow: row wrap;
+  }
+
+  @media (min-width: $desktope-width) {
+    width: 1011px;
+  }
+}
