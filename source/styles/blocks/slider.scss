@@ -1,17 +1,14 @@
 .slider {
   position: relative;
-  // padding: 20px 20px 60px;
 
   @media (min-width: $tablet-width) {
     min-height: 640px;
-    // padding-top: 58px;
     margin-bottom: 200px;
   }
 
   @media (min-width: $desktope-width) {
     min-height: 714px;
     margin-bottom: 0;
-    // padding: 30px 0 60px;
   }
 }
 
@@ -27,13 +24,17 @@
     background-color: $lavender-latte;
   }
 
+  &--espresso {
+    background-color: $espresso;
+  }
+
   @media (min-width: $tablet-width) {
     padding: 58px 0 0;
   }
 
   @media (min-width: $desktope-width) {
     min-height: 714px;
-    padding-top: 30px;
+    padding: 30px 0 84px;
   }
 }
 

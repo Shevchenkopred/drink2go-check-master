@@ -69,6 +69,12 @@
   }
 }
 
+.range-slider__input::-webkit-outer-spin-button,
+.range-slider__input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
 .range-slider__separator {
   display: inline-block;
   width: 8px;

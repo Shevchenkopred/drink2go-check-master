@@ -24,19 +24,8 @@
 .form-filter__item {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
-
-// .form-filter__input--milk:hover::before {
-//   content: "";
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   translate: -50% -50%;
-//   width: 16px;
-//   aspect-ratio: 1;
-//   border-radius: 100%;
-//   background-color: $primary-opacity;
-// }
 
 .form-filter__input {
   position: relative;
