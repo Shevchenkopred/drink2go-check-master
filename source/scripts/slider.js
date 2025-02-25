@@ -1,53 +1,57 @@
-const containerSlider = document.querySelector('.slider__items');
+const slides = document.querySelectorAll('.slider__item');
+const buttonPrev = document.querySelector('.slider__control--prev');
+const buttonNext = document.querySelector('.slider__control--next');
 
-const prevSlide = document.querySelector('.slider__control--prev');
-const nextSlide = document.querySelector('.slider__control--next');
-
-const paginationSlider = Array.from(document.querySelectorAll('.slider__indicator'));
-
-const slides = Array.from(containerSlider.querySelectorAll('.slider__item'));
-const slideCount = slides.length;
+const buttonIndicator = document.querySelectorAll('.slider__indicator');
 
 let currentSlide = 0;
+slides[currentSlide].style.display = 'block';
 
-prevSlide.addEventListener('click', showPrevSlide);
-nextSlide.addEventListener('click', showNextSlide);
+const showNextSlide = () => {
+  slides[currentSlide].style.display = 'none';
+  currentSlide++;
+  slides[currentSlide].style.display = 'block';
+  checkingStatusButtons();
+};
 
-function showPrevSlide () {
-  currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-  updateSlider();
-  updateSliderPagination();
-}
+const showPrevSlide = () => {
+  slides[currentSlide].style.display = 'none';
+  currentSlide--;
+  slides[currentSlide].style.display = 'block';
+  checkingStatusButtons();
+};
 
-function showNextSlide () {
-  currentSlide = (currentSlide + 1) % slideCount;
-  updateSlider();
-  updateSliderPagination();
-}
-
-function updateSlider() {
-  slides.forEach((slide, index) => {
-
-    if (index === currentSlide) {
-      slide.style.display = 'block';
-
-    } else {
-      slide.style.display = 'none';
-    }
+const getActiveIndicator = () => {
+  buttonIndicator.forEach((item, index) => {
+    buttonIndicator[index].classList.remove('slider__indicator--active');
+    buttonIndicator[currentSlide].classList.add('slider__indicator--active');
   });
+};
+
+function checkingStatusButtons () {
+  buttonNext.disabled = currentSlide === slides.length - 1;
+  buttonPrev.disabled = currentSlide === 0;
+  getActiveIndicator();
 }
 
-function updateSliderPagination() {
-  paginationSlider.forEach((pagination, index) => {
-
-    if (index === currentSlide) {
-      pagination.classList.add('slider__indicator--active');
-
-    } else {
-      pagination.classList.remove('slider__indicator--active');
-    }
+const showCurrentSlideForIndicator = () => {
+  buttonIndicator.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      slides[currentSlide].style.display = 'none';
+      currentSlide = index;
+      slides[currentSlide].style.display = 'block';
+      checkingStatusButtons ();
+    });
   });
+};
+
+buttonPrev.addEventListener('click', showPrevSlide);
+buttonNext.addEventListener('click', showNextSlide);
+
+function showSlider () {
+  checkingStatusButtons();
+  showCurrentSlideForIndicator();
+  getActiveIndicator();
 }
 
-
-updateSlider();
+showSlider();
